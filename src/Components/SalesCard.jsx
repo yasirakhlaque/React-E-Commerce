@@ -49,15 +49,18 @@ export default function SalesCard() {
                 <DetailedProductView
                     product={selectedProduct}
                     onClose={handleCloseDetailView}
+                    theme={theme}
                 />
             )}
         </>
     );
 }
 
-function DetailedProductView({ product, onClose }) {
+
+
+function DetailedProductView({ product, onClose, theme }) {
     return (
-        <div className="detailed-view">
+        <div className={`detailed-view ${theme}`}>
             <div className="close-btn-container">
                 <button onClick={onClose} className='close-btn'><i className="fa-solid fa-xmark"></i></button>
             </div>

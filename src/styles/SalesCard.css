@@ -76,6 +76,11 @@
     padding: 4rem 2rem;
 }
 
+.detailed-view.light{
+    background: linear-gradient(180deg, #fcfcfc 0%, #a1a1ad 100%);
+    color: black;
+}
+
 .detailed-view .detailed-img {
     height: 70vh;
     width: 70vh;
@@ -100,6 +105,10 @@
     position: absolute;
     top: 0;
     left: 7px;
+}
+
+.detailed-view.light .close-btn-container .close-btn {
+    color: black;
 }
 
 .detailed-view .detailed {
