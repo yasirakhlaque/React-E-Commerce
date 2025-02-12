@@ -1,8 +1,12 @@
 import '../styles/Landing.css'
-export default function Landing() {
+import { useContext } from 'react';
+import { ThemeContext } from '../App';
+
+export default function Landing({themebtn, toggle}) {
+    const { theme, toggleTheme } = useContext(ThemeContext);
     return (
         <>
-            <div className="landing">
+            <div className={`landing ${theme}`}>
                 <div className="nav">
                     <div className="navigation">
                         <div className="logo">LOGO</div>
@@ -17,6 +21,9 @@ export default function Landing() {
                     </div>
                     <div className="credidentials">
                         <ul>
+                            <button className="theme-toggle" onClick={toggle}>
+                                {themebtn === 'dark' ? <i className="fa-solid fa-sun"></i> : <i className="fa-solid fa-moon"></i>}
+                            </button>
                             <li><button className="login-btn">Login</button></li>
                             <li><button className="Signup-btn">SignUP</button></li>
                         </ul>

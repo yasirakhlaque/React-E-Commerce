@@ -1,14 +1,16 @@
-.landing{
-    background: url('/Images/shop.png');
-    background-size: cover;
-    background-position: center;
+.landing {
+    background: linear-gradient(to top, #141316, #110c55);
     height: 100vh;
 
 }
 
+.landing.light {
+    background: linear-gradient(to top, #f0e8e8, #a7a7a7);
+}
+
 /* Navigation Styles */
 
-.nav{
+.nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,7 +18,7 @@
     flex-wrap: wrap;
 }
 
-.navigation{
+.navigation {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -24,7 +26,7 @@
     width: 83vh;
 }
 
-.nav ul{
+.nav ul {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -32,30 +34,49 @@
     gap: 3vh;
 }
 
-.logo{
+.logo {
     color: white;
 }
 
-.menu{
+.menu {
     background-color: #ffffff54;
     color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     border-radius: 5px;
-    padding:2vh 3vh;
+    padding: 2vh 3vh;
+    font-weight: 600;
 }
 
-.menu ul{
+.menu ul {
     gap: 10vh;
 }
 
-.credidentials{
+.landing.light .menu {
+    color: black;
+}
+
+.credidentials {
     background-color: #ffffff54;
-    padding:1vh;
+    padding: 1vh;
     border-radius: 5px;
 }
 
-.Signup-btn, .login-btn, .explore{
+.credidentials ul button.theme-toggle {
+    background-color: #ffffff4f;
+    width: 5vh;
+    height: 5vh;
+    border: none;
+    border-radius: 4px;
+
+    &:hover {
+        border: 1px solid rgb(255, 255, 255);
+    }
+}
+
+.Signup-btn,
+.login-btn,
+.explore {
     width: 12vh;
     height: 5vh;
     text-transform: uppercase;
@@ -65,7 +86,7 @@
     border: 1px solid transparent;
     transition: all .3s ease;
 
-    &:hover{
+    &:hover {
         border: 1px solid white;
         background: transparent;
         color: white;
@@ -73,11 +94,11 @@
     }
 }
 
-.Signup-btn{
+.Signup-btn {
     background-color: #fff;
 }
 
-.login-btn{
+.login-btn {
     background-color: #000000;
     color: white;
 }
@@ -85,7 +106,7 @@
 
 /* Main Content  */
 
-.dialogue{
+.dialogue {
     height: 70vh;
     display: flex;
     justify-content: center;
@@ -93,7 +114,11 @@
     text-align: center;
 }
 
-.dialogue-content{
+.landing.light .dialogue-content {
+    color: #000000;
+}
+
+.dialogue-content {
     color: rgb(172, 172, 172);
     font-size: 1.3rem;
     width: 55%;
@@ -104,11 +129,11 @@
     gap: 4vh;
 }
 
-.dialogue-content p{
+.dialogue-content p {
     font-size: 1.1rem;
 }
 
-.explore{
+.explore {
     border-radius: 25px;
     background-color: #ffffff;
     color: rgb(0, 0, 0);
@@ -118,23 +143,27 @@
 
 
 @media (max-width:768px) {
-    .nav{
+    .nav {
         gap: 2vh;
         justify-content: center;
     }
-    .navigation{
-       width: 100vw;
-       gap: 2vh;
+
+    .navigation {
+        width: 100vw;
+        gap: 2vh;
     }
-    .navigation ul{
+
+    .navigation ul {
         width: 70vw;
         gap: 0vh;
         font-size: .8rem;
     }
-    .dialogue-content{
+
+    .dialogue-content {
         font-size: 1rem;
     }
-    .dialogue-content p{
+
+    .dialogue-content p {
         font-size: .9rem;
     }
 }

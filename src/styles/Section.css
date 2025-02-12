@@ -1,0 +1,19 @@
+.categories {
+    background: linear-gradient(to top, #110c55, #141316 );
+    text-align: center; 
+    color: white;
+    padding: 4rem 0; 
+}
+
+.categories.light{
+    color: black;
+    background: linear-gradient(to top,  #a7a7a7, #f0e8e8);
+}
+
+.categories-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap: 2rem; 
+    padding: 1rem;
+}

@@ -1,0 +1,18 @@
+.top-listed{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 3rem 0;
+    gap: 2rem;
+    background: linear-gradient(to top,  #141316 , #110c55 );
+    color: white;
+}
+
+.sales-cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
