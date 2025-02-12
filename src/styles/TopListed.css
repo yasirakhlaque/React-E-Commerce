@@ -9,6 +9,11 @@
     color: white;
 }
 
+.top-listed.light{
+    background: linear-gradient(to top,  #f0e8e8, #a7a7a7 );
+    color: black;
+}
+
 .sales-cards{
     display: flex;
     justify-content: center;
