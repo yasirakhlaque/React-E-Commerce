@@ -1,0 +1,156 @@
+/* Navigation Styles */
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3vh;
+    flex-wrap: wrap;
+    position: fixed;
+    width: 100vw;
+    z-index: 9;
+    top: 0;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 83vh;
+}
+
+.nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    gap: 3vh;
+}
+
+.logo {
+    color: white;
+}
+
+.menu {
+    background-color: #ffffff54;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 2vh 3vh;
+    font-weight: 600;
+}
+
+.menu ul {
+    gap: 10vh;
+}
+
+.nav.light .menu {
+    color: black;
+}
+
+.credidentials {
+    background-color: #ffffff54;
+    padding: 1vh;
+    border-radius: 5px;
+}
+
+.credidentials ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.credidentials ul button.theme-toggle {
+    background-color: #ffffff4f;
+    width: 5vh;
+    height: 5vh;
+    border: none;
+    border-radius: 4px;
+
+    &:hover {
+        border: 1px solid rgb(255, 255, 255);
+    }
+}
+
+.cart-icon{
+    width: 5vh;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #ffffff4f;
+    border: none;
+    cursor: pointer;
+}
+
+.Signup-btn,
+.login-btn,
+.explore {
+    width: 12vh;
+    height: 5vh;
+    text-transform: uppercase;
+    border: none;
+    border: 1px solid transparent;
+    transition: all .3s ease;
+
+    &:hover {
+        border: 1px solid white;
+        background: transparent;
+        color: white;
+        cursor: pointer;
+    }
+}
+
+.explore{
+    width: 15vh;
+    font-weight: 600;
+}
+
+.Signup-btn {
+    background-color: #fff;
+    border-radius: 4px;
+    font-weight: 800;
+}
+
+.login-btn {
+    background-color: #000000;
+    border-radius: 4px;
+    color: white;
+    font-weight: 800;
+}
+
+@media (max-width:768px) {
+    .nav {
+        gap: 2vh;
+        justify-content: center;
+    }
+
+    .navigation {
+        width: 100vw;
+        gap: 2vh;
+    }
+
+    .navigation ul {
+        width: 70vw;
+        gap: 0vh;
+        font-size: .8rem;
+    }
+
+    .menu {
+        padding: 1vh;
+    }
+
+    .credidentials ul button.theme-toggle {
+        height: 3vh;
+    }
+
+    .credidentials ul li button {
+        height: 3vh;
+        font-size: .6rem;
+    }
+}

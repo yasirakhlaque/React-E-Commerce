@@ -19,7 +19,7 @@ function App() {
         <div className={`app ${theme}`}>
           <Routes>
             <Route path="/" element={<Landing />} />
-            <Route path="/cart" element={<Cart />} />
+            <Route path="/cart" element={<Cart themebtn={theme} toggle={toggleTheme} />} />
             <Route path="/TopListed" element={<TopListed />} />
 
           </Routes>

@@ -1,151 +1,43 @@
+/* ===== General Styles ===== */
 .landing {
     background: linear-gradient(to top, #141316, #110c55);
     height: 100vh;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* padding: 0 5%; */
 }
 
 .landing.light {
     background: linear-gradient(to top, #f0e8e8, #a7a7a7);
 }
 
-/* Navigation Styles */
-
-.nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 3vh;
-    flex-wrap: wrap;
-    position: fixed;
-    width: 100vw;
-    z-index: 9;
-}
-
-.navigation {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 83vh;
-}
-
-.nav ul {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    list-style: none;
-    gap: 3vh;
-}
-
-.logo {
-    color: white;
-}
-
-.menu {
-    background-color: #ffffff54;
-    color: rgb(255, 255, 255);
-    display: flex;
-    justify-content: center;
-    border-radius: 5px;
-    padding: 2vh 3vh;
-    font-weight: 600;
-}
-
-.menu ul {
-    gap: 10vh;
-}
-
-.landing.light .menu {
-    color: black;
-}
-
-.credidentials {
-    background-color: #ffffff54;
-    padding: 1vh;
-    border-radius: 5px;
-}
-
-.credidentials ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-
-}
-
-.credidentials ul button.theme-toggle {
-    background-color: #ffffff4f;
-    width: 5vh;
-    height: 5vh;
-    border: none;
-    border-radius: 4px;
-
-    &:hover {
-        border: 1px solid rgb(255, 255, 255);
-    }
-}
-
-.cart-icon{
-    width: 5vh;
-    height: 5vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    background-color: #ffffff4f;
-    border: none;
-    cursor: pointer;
-}
-
-.Signup-btn,
-.login-btn,
-.explore {
-    width: 12vh;
-    height: 5vh;
-    text-transform: uppercase;
-    border-radius: 4px;
-    border: none;
-    font-weight: 800;
-    border: 1px solid transparent;
-    transition: all .3s ease;
-
-    &:hover {
-        border: 1px solid white;
-        background: transparent;
-        color: white;
-        cursor: pointer;
-    }
-}
-
-.Signup-btn {
-    background-color: #fff;
-}
-
-.login-btn {
-    background-color: #000000;
-    color: white;
-}
-
-
-/* Main Content  */
-
+/* ===== Main Content ===== */
 .dialogue {
-    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-top: 40vh;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 10vh;
 }
 
+/* Light Mode Text Color */
 .landing.light .dialogue-content {
     color: #000000;
 }
 
+/* ===== Image Styling ===== */
 .dialog-img1,
 .dialog-img2 {
-    height: 45vh;
-    width: 45vh;
+    height: 40vh;
+    width: 40vh;
+    max-width: 100%;
 }
 
 .dialog-img1 img,
@@ -155,7 +47,7 @@
     object-fit: cover;
 }
 
-.dialog-img1{
+.dialog-img1 {
     transform: translateX(-80px);
     animation: slideleft 2.5s ease-in-out;
 }
@@ -165,91 +57,142 @@
     animation: slideright 2.5s ease-in-out;
 }
 
+/* ===== Keyframe Animations ===== */
 @keyframes slideleft {
-    0%{
-        transform: translateX(-200px);
-    }
-    70%{
-        transform: translateX(30px);
-    }
-    100%{
-        transform: translateX(-80px);
-    }
-    
+    0% { transform: translateX(-200px); }
+    70% { transform: translateX(30px); }
+    100% { transform: translateX(-80px); }
 }
 
 @keyframes slideright {
-    0%{
-        transform:scaleX(-1) translateX(-200px);
-    }
-    70%{
-        transform:scaleX(-1) translateX(30px);
-    }
-    100%{
-        transform:scaleX(-1) translateX(-80px);
-    }
-    
+    0% { transform: scaleX(-1) translateX(-200px); }
+    70% { transform: scaleX(-1) translateX(30px); }
+    100% { transform: scaleX(-1) translateX(-80px); }
 }
 
+/* ===== Content Styling ===== */
 .dialogue-content {
     color: rgb(172, 172, 172);
     font-size: 1.3rem;
-    width: 55%;
+    width: 50%;
+    min-width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 4vh;
+    gap: 3vh;
 }
 
 .dialogue-content p {
     font-size: 1.1rem;
+    max-width: 90%;
+    line-height: 1.6;
 }
 
+/* ===== Button Styling ===== */
 .explore {
     border-radius: 25px;
     background-color: #ffffff;
     color: rgb(0, 0, 0);
     width: 20vh;
     height: 7vh;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
+.explore:hover {
+    background-color: #ddd;
+}
 
-@media (max-width:768px) {
-    .nav {
-        gap: 2vh;
-        justify-content: center;
+/* ===== Responsive Adjustments ===== */
+
+/* Tablets & Small Laptops */
+@media (max-width: 1024px) {
+    .dialogue {
+        flex-direction: column;
+        padding-top: 5vh;
     }
 
-    .navigation {
-        width: 100vw;
-        gap: 2vh;
-    }
-
-    .navigation ul {
-        width: 70vw;
-        gap: 0vh;
-        font-size: .8rem;
-    }
-
-    .menu {
-        padding: 1vh;
-    }
-
-    .credidentials ul button.theme-toggle {
-        height: 3vh;
-    }
-
-    .credidentials ul li button {
-        height: 3vh;
-        font-size: .6rem;
+    .dialog-img1, .dialog-img2 {
+        height: 35vh;
+        width: 35vh;
     }
 
     .dialogue-content {
+        width: 80%;
+        font-size: 1.1rem;
+    }
+
+    .dialogue-content p {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    .landing {
+        height: auto;
+        padding-bottom: 10vh;
+    }
+
+    .dialogue {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .dialog-img1, .dialog-img2 {
+        height: 30vh;
+        width: 30vh;
+        transform: none;
+    }
+
+    .dialog-img1 {
+        animation: none;
+    }
+
+    .dialog-img2 {
+        transform: scaleX(1);
+        animation: none;
+    }
+
+    .dialogue-content {
+        width: 90%;
         font-size: 1rem;
     }
 
     .dialogue-content p {
-        font-size: .9rem;
+        font-size: 0.9rem;
+    }
+
+    .explore {
+        width: 18vh;
+        height: 6vh;
+        font-size: 0.9rem;
+    }
+}
+
+/* Extra Small Screens (Phones) */
+@media (max-width: 480px) {
+    .dialog-img1, .dialog-img2 {
+        height: 25vh;
+        width: 25vh;
+    }
+
+    .dialogue-content {
+        width: 95%;
+        font-size: 0.9rem;
+    }
+
+    .dialogue-content p {
+        font-size: 0.85rem;
+    }
+
+    .explore {
+        width: 16vh;
+        height: 5.5vh;
+        font-size: 0.85rem;
     }
 }

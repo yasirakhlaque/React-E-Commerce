@@ -1,0 +1,68 @@
+.cart{
+    background: linear-gradient(to top, #141316, #110c55);
+    min-height: 100vh;
+    padding-top: 16vh;
+    display: flex;
+    justify-content: center;
+}
+
+.cart.light{
+    background: linear-gradient(to top, #f0e8e8, #a7a7a7);
+}
+
+.cart-items{
+    padding: 2vh;
+}
+
+/* bill styles  */
+
+.total-bill{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(to bottom right, #202379, #373352);
+    height: 70vh;
+    border-radius: 12px;
+    color: white;
+    gap: 2vh;
+    padding: 2vh;
+    text-align: left;
+}
+
+.cart.light .total-bill{
+    background: linear-gradient(180deg, #fcfcfc 0%, #a1a1ad 100%);
+    color: black;
+}
+
+.total-bill ul {
+    list-style: none;
+    text-align: left;
+    max-height: 55vh;
+    overflow: auto;
+}
+
+.total-bill ul li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:2vh;
+    border-bottom: 1px solid grey;
+}
+
+.buy{
+    border: none;
+    background-color: #1c45ca;
+    color: white;
+    font-weight: 600;
+    height: 6vh;
+    border-radius: 6px;
+}
+
+@media (max-width:768px) {
+    .cart{
+        flex-direction: column;
+    }
+    .total-bill{
+        margin: 4vh;
+    }
+}
