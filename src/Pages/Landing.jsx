@@ -1,49 +1,19 @@
-import '../styles/Landing.css'
+import Hero from './Hero';
+import Section from './Section';
+import TopListed from './TopListed';
 import { useContext } from 'react';
 import { ThemeContext } from '../App';
 
-export default function Landing({ themebtn, toggle }) {
+export default function Landing() {
     const { theme, toggleTheme } = useContext(ThemeContext);
+
     return (
         <>
             <div className={`landing ${theme}`}>
-                <div className="nav">
-                    <div className="navigation">
-                        <div className="logo">LOGO</div>
-                        <div className="menu">
-                            <ul>
-                                <li>HOME</li>
-                                <li>TOP</li>
-                                <li>CONTACT</li>
-                                <li>HELP</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="credidentials">
-                        <ul>
-                            <button className="theme-toggle" onClick={toggle}>
-                                {themebtn === 'dark' ? <i className="fa-solid fa-sun"></i> : <i className="fa-solid fa-moon"></i>}
-                            </button>
-                            <li><button className="cart-icon"><i className="fa-solid fa-cart-shopping"></i></button></li>
-                            <li><button className="login-btn">Login</button></li>
-                            <li><button className="Signup-btn">SignUP</button></li>
-                        </ul>
-                    </div>
-                </div>
-                <div className="dialogue">
-                    <div className="dialog-img1">
-                        <img src="Images/headphone2.png" alt="Images" />
-                    </div>
-                    <div className="dialogue-content">
-                        <h1>You Are At Right Place</h1>
-                        <p>The place where you will get so many tech product at the same place at resonable cost. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet, autem.</p>
-                        <button className='explore'>Explore</button>
-                    </div>
-                    <div className="dialog-img2">
-                        <img src="Images/headphone2.png" alt="Images" />
-                    </div>
-                </div>
+                <Hero themebtn={theme} toggle={toggleTheme} />
             </div>
+            <Section />
+            <TopListed />
         </>
-    )
+    );
 }
