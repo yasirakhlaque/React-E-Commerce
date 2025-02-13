@@ -1,7 +1,7 @@
 .landing {
     background: linear-gradient(to top, #141316, #110c55);
     height: 100vh;
-
+    overflow: hidden;
 }
 
 .landing.light {
@@ -65,7 +65,7 @@
     border-radius: 5px;
 }
 
-.credidentials ul{
+.credidentials ul {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,6 +83,18 @@
     &:hover {
         border: 1px solid rgb(255, 255, 255);
     }
+}
+
+.cart-icon{
+    width: 5vh;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #ffffff4f;
+    border: none;
+    cursor: pointer;
 }
 
 .Signup-btn,
@@ -130,6 +142,55 @@
     color: #000000;
 }
 
+.dialog-img1,
+.dialog-img2 {
+    height: 45vh;
+    width: 45vh;
+}
+
+.dialog-img1 img,
+.dialog-img2 img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.dialog-img1{
+    transform: translateX(-80px);
+    animation: slideleft 2.5s ease-in-out;
+}
+
+.dialog-img2 {
+    transform: scaleX(-1) translateX(-80px);
+    animation: slideright 2.5s ease-in-out;
+}
+
+@keyframes slideleft {
+    0%{
+        transform: translateX(-200px);
+    }
+    70%{
+        transform: translateX(30px);
+    }
+    100%{
+        transform: translateX(-80px);
+    }
+    
+}
+
+@keyframes slideright {
+    0%{
+        transform:scaleX(-1) translateX(-200px);
+    }
+    70%{
+        transform:scaleX(-1) translateX(30px);
+    }
+    100%{
+        transform:scaleX(-1) translateX(-80px);
+    }
+    
+}
+
 .dialogue-content {
     color: rgb(172, 172, 172);
     font-size: 1.3rem;
@@ -170,15 +231,16 @@
         gap: 0vh;
         font-size: .8rem;
     }
-    .menu{
+
+    .menu {
         padding: 1vh;
     }
 
-    .credidentials ul button.theme-toggle{
+    .credidentials ul button.theme-toggle {
         height: 3vh;
     }
 
-    .credidentials ul li button{
+    .credidentials ul li button {
         height: 3vh;
         font-size: .6rem;
     }

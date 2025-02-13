@@ -12,6 +12,11 @@
     align-items: center;
     flex-direction: column;
     text-align: left;
+
+    &:hover {
+        transform: scale(1.02);
+        box-shadow: 8px 8px 12px rgb(32, 32, 48);
+    }
 }
 
 .sales-card.light {
@@ -47,6 +52,21 @@
     height: 7vh;
     width: 7vh;
     border-radius: 50%;
+    cursor: pointer;
+}
+
+.fa-plus:hover {
+    animation: plusroll 1s ease-in-out;
+}
+
+@keyframes plusroll {
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
 }
 
 /* Item Details */
@@ -76,7 +96,7 @@
     padding: 4rem 2rem;
 }
 
-.detailed-view.light{
+.detailed-view.light {
     background: linear-gradient(180deg, #fcfcfc 0%, #a1a1ad 100%);
     color: black;
 }
