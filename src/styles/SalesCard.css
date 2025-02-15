@@ -12,9 +12,10 @@
     align-items: center;
     flex-direction: column;
     text-align: left;
+    transition: all .5s ease-in-out;
 
     &:hover {
-        transform: scale(1.02);
+        transform: scale(1.1) rotate(-5deg);
         box-shadow: 8px 8px 12px rgb(32, 32, 48);
     }
 }
@@ -53,11 +54,12 @@
     width: 7vh;
     border-radius: 50%;
     cursor: pointer;
+
+    &:hover{
+        animation: plusroll 1s ease-in-out;
+    }
 }
 
-.fa-plus:hover {
-    animation: plusroll 1s ease-in-out;
-}
 
 @keyframes plusroll {
     from {
