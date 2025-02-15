@@ -2,7 +2,7 @@ import '../styles/CartCard.css'
 import { ThemeContext } from '../App';
 import { useContext } from 'react';
 
-export default function CartCard({ itemImage, itemName, itemAbt, itemPrice }) {
+export default function CartCard({ itemImage, itemName, itemAbt, itemPrice, product, removeFromCart }) {
     const { theme } = useContext(ThemeContext);
 
     return (
@@ -17,7 +17,7 @@ export default function CartCard({ itemImage, itemName, itemAbt, itemPrice }) {
                     <h1>{itemPrice}</h1>
                 </div>
                 <div className="cart-options">
-                    <button className="delete"><i className="fa-solid fa-trash"></i></button>
+                    <button className="delete" onClick={() => removeFromCart(product)}><i className="fa-solid fa-trash"></i></button>
                 </div>
             </div>
         </>

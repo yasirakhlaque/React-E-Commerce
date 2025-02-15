@@ -12,6 +12,9 @@
 
 .cart-items{
     padding: 2vh;
+    min-width: 67vw;
+    text-align: center;
+    color: white;
 }
 
 /* bill styles  */
@@ -27,6 +30,7 @@
     gap: 2vh;
     padding: 2vh;
     text-align: left;
+    min-width: 25vw;
 }
 
 .cart.light .total-bill{

@@ -1,11 +1,12 @@
-import '../styles/SalesCard.css'
-import { useContext } from 'react';
+import '../styles/SalesCard.css';
+import { useContext, useState } from 'react';
 import { ThemeContext } from '../App';
-import { useState } from 'react';
+import { CartContext } from "../Context/CartContext";
 
 export default function SalesCard() {
-    const { theme, toggleTheme } = useContext(ThemeContext);
+    const { theme } = useContext(ThemeContext); // No need for toggleTheme here
     const [selectedProduct, setSelectedProduct] = useState(null);
+    const { AddToCart } = useContext(CartContext);
 
     let items = [ // Renamed to 'items' for clarity
         { itemImage: "Images/laptop1.png", itemName: "Laptop of India by amazon", itemAbt: "Experience unparalleled performance and portability with the revolutionary [Laptop Name].  Engineered for the modern professional and creative, this laptop boasts a blazing-fast [Processor Name] processor, ensuring seamless multitasking and lightning-quick application loading.  Immerse yourself in vibrant visuals on the stunning [Screen Size] [Resolution] display, perfect for both work and entertainment.  The sleek, lightweight design makes it the ideal companion for travel, while the long-lasting battery keeps you productive throughout your day.  Featuring [RAM] of memory and a lightning-fast [Storage Type] drive, you'll have ample space for your files and experience near-instant boot times.  The [Laptop Name] is not just a laptop; it's your gateway to limitless possibilities", itemPrice: "Rs.49999" },
@@ -24,41 +25,42 @@ export default function SalesCard() {
         setSelectedProduct(null);
     };
 
+    const handleAddToCart = (product) => {
+        AddToCart(product); // Add the specific product to the cart
+    };
+
     return (
         <>
-            {
-                items.map((product, index) => ( // Correct usage: product, index
-                    <div className={`sales-card ${theme}`} key={index} onClick={() => handleCardClick(product)}> {/* Added key prop */}
-                        <div className="item-img">
-                            <img src={product.itemImage} alt="Images" /> {/* Use product.itemImage */}
-                            <div className="add-to-cart">
-                                <i className="fa-solid fa-plus"></i>
-                            </div>
-                        </div>
-                        <div className="item-name">
-                            <h3>{product.itemName}</h3> {/* Use product.itemName */}
-                            <p>{product.itemAbt.slice(0, 30)}</p> {/* Use product.itemAbt */}
-                        </div>
-                        <div className="item-price">
-                            <h4>{product.itemPrice}</h4> {/* Use product.itemPrice */}
+            {items.map((product, index) => (
+                <div className={`sales-card ${theme}`} key={index} onClick={() => handleCardClick(product)}>
+                    <div className="item-img">
+                        <img src={product.itemImage} alt={product.itemName} /> {/* Added alt attribute */}
+                        <div className="add-to-cart" onClick={(e) => { e.stopPropagation(); handleAddToCart(product); }}> {/* Prevent card click, add specific product */}
+                            <i className="fa-solid fa-plus"></i>
                         </div>
                     </div>
-                ))
-            }
-            {selectedProduct && ( // Conditional rendering
+                    <div className="item-name">
+                        <h3>{product.itemName}</h3>
+                        <p>{product.itemAbt.slice(0, 30)}...</p> {/* Added ellipsis for better readability */}
+                    </div>
+                    <div className="item-price">
+                        <h4>{product.itemPrice}</h4>
+                    </div>
+                </div>
+            ))}
+            {selectedProduct && (
                 <DetailedProductView
                     product={selectedProduct}
                     onClose={handleCloseDetailView}
                     theme={theme}
+                    onAddToCart={handleAddToCart} // Pass the add to cart function
                 />
             )}
         </>
     );
 }
 
-
-
-function DetailedProductView({ product, onClose, theme }) {
+function DetailedProductView({ product, onClose, theme, onAddToCart }) {
     return (
         <div className={`detailed-view ${theme}`}>
             <div className="close-btn-container">
@@ -73,6 +75,7 @@ function DetailedProductView({ product, onClose, theme }) {
                     <p>{product.itemAbt}</p>
                     <h4>{product.itemPrice}</h4>
                 </div>
+                <button onClick={() => onAddToCart(product)}>Add</button> {/* Call the passed function */}
             </div>
         </div>
     );

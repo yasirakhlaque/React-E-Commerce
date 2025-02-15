@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Landing from './Pages/Landing';
 import Cart from './Pages/Cart';
 import TopListed from './Pages/TopListed';
+import CartProvider from './Context/CartContext';
 
 export const ThemeContext = createContext();
 
@@ -15,6 +16,7 @@ function App() {
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <CartProvider>
       <Router>
         <div className={`app ${theme}`}>
           <Routes>
@@ -25,6 +27,7 @@ function App() {
           </Routes>
         </div>
       </Router>
+      </CartProvider>
     </ThemeContext.Provider>
   );
 }
