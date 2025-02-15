@@ -1,7 +1,8 @@
 import { useContext } from 'react';
 import { ThemeContext } from '../App';
 import { Link } from 'react-router-dom';
-import '../styles/Navbar.css'
+import '../styles/Navbar.css';
+import { HashLink } from 'react-router-hash-link';
 
 export default function Navbar({ themebtn, toggle }) {
     const { theme } = useContext(ThemeContext);
@@ -9,13 +10,18 @@ export default function Navbar({ themebtn, toggle }) {
     return (
         <div className={`nav ${theme}`}>
             <div className="navigation">
-                <div className="logo">LOGO</div>
+                <div className="logo">
+                    <Link to={'/'}>
+                        LOGO
+                    </Link>
+                </div>
                 <div className="menu">
                     <ul>
-                        <Link to={"/"}>
-                            <li>HOME</li>
-                        </Link>
-                        <li>TOP</li>
+                        <li><HashLink smooth to="/#home">HOME</HashLink></li>
+
+                        <li>
+                            <HashLink smooth to="/#top-section">TOP</HashLink>
+                        </li>
                         <li>CONTACT</li>
                         <li>HELP</li>
                     </ul>

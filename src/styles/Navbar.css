@@ -46,6 +46,13 @@
     gap: 10vh;
 }
 
+.menu ul li{
+    &:hover{
+        cursor: pointer;
+        color: blue;
+    }
+}
+
 .nav.light .menu {
     color: black;
 }

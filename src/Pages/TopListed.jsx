@@ -8,7 +8,7 @@ export default function TopListed() {
     const { theme, toggleTheme } = useContext(ThemeContext);
     return (
         <>
-            <div className={`top-listed ${theme}`}>
+            <div className={`top-listed ${theme}`} id="top-section">
             <ShineText text="Best Sales Item" />
                 <div className="sales-cards">
                     <SalesCard />

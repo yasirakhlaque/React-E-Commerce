@@ -9,11 +9,13 @@ export default function Landing() {
 
     return (
         <>
-            <div className={`landing ${theme}`}>
+            <div className={`landing ${theme}`} id='home'>
                 <Hero themebtn={theme} toggle={toggleTheme} />
             </div>
             <Section />
-            <TopListed />
+            <div id="top-section">
+                <TopListed />
+            </div>
         </>
     );
 }
