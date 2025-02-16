@@ -1,0 +1,13 @@
+.laptops{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to top, #141316, #110c55);
+    flex-wrap: wrap;
+    gap: 5vh;
+    padding-top: 25vh;
+}
+
+.laptops.light{
+    background: linear-gradient(to top, #f0e8e8, #a7a7a7);
+}

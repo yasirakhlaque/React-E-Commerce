@@ -22,31 +22,33 @@ export default function SalesCard({ products }) {  // Accept products as a prop
 
     return (
         <>
-            {products.map((product, index) => ( // Use passed products
-                <div className={`sales-card ${theme}`} key={index} onClick={() => handleCardClick(product)}>
-                    <div className="item-img">
-                        <img src={product.itemImage} alt={product.itemName} />
-                        <div className="add-to-cart" onClick={(e) => { e.stopPropagation(); handleAddToCart(product); }}>
-                            <i className="fa-solid fa-plus"></i>
+            <div className="sales-container">  {/* Wrap all cards */}
+                {products.map((product, index) => (
+                    <div className={`sales-card ${theme}`} key={index} onClick={() => handleCardClick(product)}>
+                        <div className="item-img">
+                            <img src={product.itemImage} alt={product.itemName} />
+                            <div className="add-to-cart" onClick={(e) => { e.stopPropagation(); handleAddToCart(product); }}>
+                                <i className="fa-solid fa-plus"></i>
+                            </div>
+                        </div>
+                        <div className="item-name">
+                            <h3>{product.itemName}</h3>
+                            <p>{product.itemAbt.slice(0, 30)}...</p>
+                        </div>
+                        <div className="item-price">
+                            <h4>{product.itemPrice}</h4>
                         </div>
                     </div>
-                    <div className="item-name">
-                        <h3>{product.itemName}</h3>
-                        <p>{product.itemAbt.slice(0, 30)}...</p>
-                    </div>
-                    <div className="item-price">
-                        <h4>{product.itemPrice}</h4>
-                    </div>
-                </div>
-            ))}
-            {selectedProduct && (
-                <DetailedProductView
-                    product={selectedProduct}
-                    onClose={handleCloseDetailView}
-                    theme={theme}
-                    onAddToCart={handleAddToCart}
-                />
-            )}
+                ))}
+                {selectedProduct && (
+                    <DetailedProductView
+                        product={selectedProduct}
+                        onClose={handleCloseDetailView}
+                        theme={theme}
+                        onAddToCart={handleAddToCart}
+                    />
+                )}
+            </div>
         </>
     );
 }

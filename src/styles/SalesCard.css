@@ -1,3 +1,22 @@
+/* Sales Container */
+.sales-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;  /* Adjust spacing */
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Hover Effect: Blur other cards when one is hovered */
+.sales-container:hover .sales-card {
+    transition: all 0.3s ease-in-out;
+}
+
+.sales-container:hover .sales-card:not(:hover) {
+    filter: blur(4px);
+    opacity: 0.5;
+}
+
 /* Sales Card Styles */
 .sales-card {
     background: linear-gradient(180deg, #242744 0%, #0a0c1e 100%);
@@ -6,18 +25,20 @@
     padding: 1vh;
     border-radius: 12px;
     text-align: left;
-    border: .1px solid rgba(128, 128, 128, 0.26);
+    border: 0.1px solid rgba(128, 128, 128, 0.26);
     box-shadow: 8px 8px 12px rgb(21 21 33);
     display: flex;
     align-items: center;
     flex-direction: column;
     text-align: left;
-    transition: all .5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    color: white;
+    cursor: pointer;
+}
 
-    &:hover {
-        transform: scale(1.1) rotate(-5deg);
-        box-shadow: 8px 8px 12px rgb(32, 32, 48);
-    }
+.sales-card:hover {
+    transform: scale(1.1) rotate(-5deg);
+    box-shadow: 8px 8px 12px rgb(32, 32, 48);
 }
 
 .sales-card.light {
@@ -40,6 +61,7 @@
     border-radius: 12px;
 }
 
+/* Add to Cart Button */
 .add-to-cart {
     position: absolute;
     display: flex;
@@ -54,18 +76,18 @@
     width: 7vh;
     border-radius: 50%;
     cursor: pointer;
-
-    &:hover{
-        animation: plusroll 1s ease-in-out;
-    }
+    transition: transform 0.3s ease-in-out;
 }
 
+.add-to-cart:hover {
+    animation: plusroll 1s ease-in-out;
+}
 
+/* Plus Icon Rotation */
 @keyframes plusroll {
     from {
         transform: rotate(360deg);
     }
-
     to {
         transform: rotate(0deg);
     }
@@ -127,6 +149,7 @@
     position: absolute;
     top: 0;
     left: 7px;
+    cursor: pointer;
 }
 
 .detailed-view.light .close-btn-container .close-btn {

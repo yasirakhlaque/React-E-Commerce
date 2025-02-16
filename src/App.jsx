@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Landing from './Pages/Landing';
 import Cart from './Pages/Cart';
 import TopListed from './Pages/TopListed';
+import Laptop from './Pages/Laptop';
 import CartProvider from './Context/CartContext';
 
 export const ThemeContext = createContext();
@@ -23,7 +24,7 @@ function App() {
             <Route path="/" element={<Landing />} />
             <Route path="/cart" element={<Cart themebtn={theme} toggle={toggleTheme} />} />
             <Route path="/TopListed" element={<TopListed />} />
-
+            <Route path="/Laptop" element={<Laptop themebtn={theme} toggle={toggleTheme}/>} />
           </Routes>
         </div>
       </Router>
