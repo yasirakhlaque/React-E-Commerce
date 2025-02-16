@@ -8,6 +8,11 @@
     min-height: 50vh;
 }
 
+.footer.light{
+    color: black;
+    background: linear-gradient(to top,  #a7a7a7, #f0e8e8  );
+}
+
 .footer .footer-content{
     width: 100vw;
     padding: 6vh;
@@ -30,8 +35,14 @@
     list-style: none;
 }
 
-.footer .footer-content .footer-section ul li{
+.footer .footer-content .footer-section ul li,
+.footer .footer-content .footer-section ul a
+{
     margin: 1vh;
+    &:hover{
+        color: #156ee2;
+        cursor: pointer;
+    }
 }
 
 .newsletter-form{
@@ -52,9 +63,27 @@
     width: 15vh;
     height: 4vh;
     border: none;
-    background-color: #0e60db;
-    color: white;
+    background: #f0e8e8;
+    border: 1px solid transparent;
+    color: rgb(0, 0, 0);
     border-radius: 6px;
+    transition: all .3s ease;
+
+    &:hover{
+        border: 1px solid rgb(255, 255, 255);
+        background: transparent;
+        color: rgb(255, 255, 255);
+    }
+}
+
+.footer.light .newsletter-form button{
+    background: #000;
+    color: white;
+    &:hover{
+        border: 1px solid rgb(0, 0, 0);
+        background: transparent;
+        color: rgb(0, 0, 0);
+    }
 }
 
 .footer-bottom{

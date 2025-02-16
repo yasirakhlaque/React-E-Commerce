@@ -1,18 +1,24 @@
 import '../styles/Footer.css'
-
+import {Link} from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link';
+import { useContext } from 'react';
+import { ThemeContext } from '../App';
 
 const Footer = () => {
+    const { theme } = useContext(ThemeContext);
     return (
-        <footer className="footer">
+        <footer className={`footer ${theme}`}>
             <div className="footer-content">
                 {/* Shop Section */}
                 <div className="footer-section">
-                    <h3>Shop</h3>
+                    <h3>Visit</h3>
                     <ul>
-                        <li><a href="#">New Arrivals</a></li>
-                        <li><a href="#">Best Sellers</a></li>
-                        <li><a href="#">Sales & Deals</a></li>
-                        <li><a href="#">Gift Cards</a></li>
+                    <HashLink smooth to="/#home">Home</HashLink>
+                        <li><a href="#">Laptops</a></li>
+                        <HashLink smooth to="/#top-section">Top Listed</HashLink>
+                        <Link to="/cart">
+                            <li>Cart</li>
+                        </Link>
                     </ul>
                 </div>
 
