@@ -10,7 +10,7 @@ export default function CategoriesOption() {
         { img: "Images/phone.png", alt: "Phone", link: "/Phones" },
         { img: "Images/tablet.png", alt: "Tablet", link: "/Tablets" },
         { img: "Images/headphone.png", alt: "Headphones", link: "/HeadPhones" },
-        { img: "Images/tech.png", alt: "Tech", link: "/tech" } // Corrected alt and link
+        { img: "Images/tech.png", alt: "Tech", link: "/Chargers" } // Corrected alt and link
     ];
 
     return (
