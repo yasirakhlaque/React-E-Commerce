@@ -72,9 +72,12 @@ export default function Laptop({ themebtn, toggle }) {
 
     return (
         <>
-            <div className={`laptops ${theme}`}>
+            <div className={`datas ${theme}`}>
                 <Navbar themebtn={themebtn} toggle={toggle} />
-                <Sortbtn setProducts={setLaptopData} products={laptopData} /> {/* ✅ Pass state */}
+                <div className="top-det">
+                    <h1>Explore Laptops From Top Brands</h1>
+                    <Sortbtn setProducts={setLaptopData} products={laptopData} /> {/* ✅ Pass state */}
+                </div>
                 <SalesCard products={laptopData} />
             </div>
         </>

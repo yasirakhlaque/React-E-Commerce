@@ -1,7 +1,10 @@
 import { useContext } from "react";
 import { CartContext } from "../Context/CartContext";
+import { ThemeContext } from '../App';
+import '../styles/Sortbtn.css'
 
 export default function Sortbtn({ setProducts, products }) {
+    const { theme } = useContext(ThemeContext);
     const { sortByPriceHigh, sortByPriceLow } = useContext(CartContext);
 
     const handleSortChange = (event) => {
@@ -14,16 +17,8 @@ export default function Sortbtn({ setProducts, products }) {
     };
 
     return (
-        <div className="sort-btn">
-            <select onChange={handleSortChange} style={{
-                backgroundColor: "#24245f",
-                border: "none",
-                width: "22vh",
-                height: "6vh",
-                color: "white",
-                borderRadius:"6px",
-                outline:"none"
-            }}>
+        <div className={`sort-btn ${theme}`}>
+            <select onChange={handleSortChange}>
                 <option value="">Sort by Price</option>
                 <option value="high">High to Low</option>
                 <option value="low">Low to High</option>

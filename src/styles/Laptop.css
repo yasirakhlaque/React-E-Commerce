@@ -1,4 +1,4 @@
-.laptops{
+.datas{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,6 +8,30 @@
     padding-top: 25vh;
 }
 
-.laptops.light{
+.datas.light{
     background: linear-gradient(to top, #f0e8e8, #a7a7a7);
+}
+
+.top-det{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+.datas.light .top-det{
+    color: black;
+}
+
+@media (max-width:768px) {
+    .top-det{
+        font-size: .8rem;
+    }
+}
+
+@media (max-width:480px) {
+    .top-det{
+        font-size: .5rem;
+    }
 }

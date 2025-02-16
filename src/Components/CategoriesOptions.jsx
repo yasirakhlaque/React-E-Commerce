@@ -7,7 +7,7 @@ export default function CategoriesOption() {
     const { theme } = useContext(ThemeContext); // No need for toggleTheme here
     let options = [
         { img: "Images/laptop.png", alt: "Laptop", link: "/Laptop" },
-        { img: "Images/phone.png", alt: "Phone", link: "/phone" },
+        { img: "Images/phone.png", alt: "Phone", link: "/Phones" },
         { img: "Images/tablet.png", alt: "Tablet", link: "/tablet" },
         { img: "Images/headphone.png", alt: "Headphones", link: "/headphone" },
         { img: "Images/tech.png", alt: "Tech", link: "/tech" } // Corrected alt and link
