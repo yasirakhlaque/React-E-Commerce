@@ -3,6 +3,7 @@ import Section from './Section';
 import TopListed from './TopListed';
 import { useContext } from 'react';
 import { ThemeContext } from '../App';
+import Footer from '../Components/Footer';
 
 export default function Landing() {
     const { theme, toggleTheme } = useContext(ThemeContext);
@@ -16,6 +17,7 @@ export default function Landing() {
             <div id="top-section">
                 <TopListed />
             </div>
+            <Footer />
         </>
     );
 }
