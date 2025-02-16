@@ -1,0 +1,70 @@
+.deal-fo-day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 4vh;
+    background: linear-gradient(to top, #110c55, #141316);
+    color: white;
+}
+
+.deal-fo-day.light {
+    color: black;
+    background: linear-gradient(to top, #a7a7a7, #f0e8e8);
+}
+
+.deal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vh;
+}
+
+.deal-img {
+    height: 55vh;
+    width: 55vh;
+}
+
+span {
+    text-decoration: 2px line-through;
+    margin-right: 2vh;
+}
+
+.deal-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.deal-data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3vh;
+    width: 50vw;
+}
+
+.deal-buy {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    width: 15vh;
+    height: 5vh;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    transition: all .3s ease;
+
+    &:hover {
+        border: 1px solid rgb(255, 255, 255);
+        color: white;
+        background: transparent;
+    }
+}
+
+@media (max-width:768px) {
+    .deal-content {
+        flex-direction: column;
+    }
+}
