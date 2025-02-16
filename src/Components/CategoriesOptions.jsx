@@ -8,7 +8,7 @@ export default function CategoriesOption() {
     let options = [
         { img: "Images/laptop.png", alt: "Laptop", link: "/Laptop" },
         { img: "Images/phone.png", alt: "Phone", link: "/Phones" },
-        { img: "Images/tablet.png", alt: "Tablet", link: "/tablet" },
+        { img: "Images/tablet.png", alt: "Tablet", link: "/Tablets" },
         { img: "Images/headphone.png", alt: "Headphones", link: "/HeadPhones" },
         { img: "Images/tech.png", alt: "Tech", link: "/tech" } // Corrected alt and link
     ];

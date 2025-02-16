@@ -8,6 +8,7 @@ import Laptop from './Pages/Laptop';
 import CartProvider from './Context/CartContext';
 import Phones from './Pages/Phones';
 import HeadPhones from './Pages/HeadPhones';
+import Tablets from './Pages/Tablets';
 
 export const ThemeContext = createContext();
 
@@ -29,6 +30,7 @@ function App() {
             <Route path="/Laptop" element={<Laptop themebtn={theme} toggle={toggleTheme}/>} />
             <Route path="/Phones" element={<Phones themebtn={theme} toggle={toggleTheme}/>} />
             <Route path="/HeadPhones" element={<HeadPhones themebtn={theme} toggle={toggleTheme}/>} />
+            <Route path="/Tablets" element={<Tablets themebtn={theme} toggle={toggleTheme}/>} />
           </Routes>
         </div>
       </Router>
