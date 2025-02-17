@@ -136,14 +136,13 @@
 }
 
 .login-btn {
-    background: transparent;
-    border: 1px solid white;
-    color: white;
+    background: black;
+    border: 1px solid transparent;
+    color: rgb(255, 255, 255);
 }
 
 .navbar.light .login-btn {
-    border-color: #000;
-    color: #000;
+    color: #ffffff;
 }
 
 .signup-btn {
