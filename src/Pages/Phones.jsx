@@ -4,6 +4,7 @@ import SalesCard from '../Components/SalesCard';
 import Navbar from '../Components/Navbar';
 import Sortbtn from '../Components/Sortbtn';
 import { ThemeContext } from "../App";
+import SideBar from "../Components/SideBar";
 
 export default function Phones({ themebtn, toggle }) {
     const { theme } = useContext(ThemeContext);
@@ -78,7 +79,12 @@ export default function Phones({ themebtn, toggle }) {
                     <h1>Explore Smartphones From Top Brands</h1>
                     <Sortbtn setProducts={setSmartphoneData} products={smartphoneData} /> {/* ✅ Pass state */}
                 </div>
-                <SalesCard products={smartphoneData} /> 
+                <div className="item-data">
+                    <div className="categories-small">
+                        <SideBar />
+                    </div>
+                    <SalesCard products={smartphoneData} />
+                </div>
             </div>
         </>
     )

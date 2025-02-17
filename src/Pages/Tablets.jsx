@@ -4,6 +4,7 @@ import SalesCard from '../Components/SalesCard';
 import Navbar from '../Components/Navbar';
 import Sortbtn from '../Components/Sortbtn';
 import { ThemeContext } from "../App";
+import SideBar from "../Components/SideBar";
 
 export default function Tablets({ themebtn, toggle }) {
     const { theme } = useContext(ThemeContext);
@@ -56,7 +57,7 @@ export default function Tablets({ themebtn, toggle }) {
             "itemAbt": "A great value entertainment tablet, the Amazon Fire HD 10 features a Full HD display and seamless Alexa integration...",
             "itemPrice": "Rs.15999"
         },
-    ]);    
+    ]);
 
     return (
         <>
@@ -66,7 +67,12 @@ export default function Tablets({ themebtn, toggle }) {
                     <h1>Explore Tablets From Top Brands</h1>
                     <Sortbtn setProducts={setTabletData} products={tabletData} /> {/* ✅ Pass state */}
                 </div>
-                <SalesCard products={tabletData} /> 
+                <div className="item-data">
+                    <div className="categories-small">
+                        <SideBar />
+                    </div>
+                    <SalesCard products={tabletData} />
+                </div>
             </div>
         </>
     )

@@ -4,6 +4,7 @@ import SalesCard from '../Components/SalesCard';
 import Navbar from '../Components/Navbar';
 import Sortbtn from '../Components/Sortbtn';
 import { ThemeContext } from "../App";
+import SideBar from "../Components/SideBar";
 
 export default function HeadPhones({ themebtn, toggle }) {
     const { theme } = useContext(ThemeContext);
@@ -68,7 +69,7 @@ export default function HeadPhones({ themebtn, toggle }) {
             "itemAbt": "The Audio-Technica ATH-M50XBT2 delivers studio-quality sound with Bluetooth convenience for music lovers and professionals...",
             "itemPrice": "Rs.21999"
         }
-    ]);    
+    ]);
 
     return (
         <>
@@ -78,7 +79,12 @@ export default function HeadPhones({ themebtn, toggle }) {
                     <h1>Explore HeadPhones From Top Brands</h1>
                     <Sortbtn setProducts={setHeadphoneData} products={headphoneData} /> {/* ✅ Pass state */}
                 </div>
-                <SalesCard products={headphoneData} /> 
+                <div className="item-data">
+                    <div className="categories-small">
+                        <SideBar />
+                    </div>
+                    <SalesCard products={headphoneData} />
+                </div>
             </div>
         </>
     )

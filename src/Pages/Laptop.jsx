@@ -4,6 +4,7 @@ import SalesCard from '../Components/SalesCard';
 import Navbar from '../Components/Navbar';
 import Sortbtn from '../Components/Sortbtn';
 import { ThemeContext } from "../App";
+import SideBar from "../Components/SideBar";
 
 export default function Laptop({ themebtn, toggle }) {
     const { theme } = useContext(ThemeContext);
@@ -74,11 +75,17 @@ export default function Laptop({ themebtn, toggle }) {
         <>
             <div className={`datas ${theme}`}>
                 <Navbar themebtn={themebtn} toggle={toggle} />
+
                 <div className="top-det">
                     <h1>Explore Laptops From Top Brands</h1>
                     <Sortbtn setProducts={setLaptopData} products={laptopData} /> {/* ✅ Pass state */}
                 </div>
-                <SalesCard products={laptopData} />
+                <div className="item-data">
+                    <div className="categories-small">
+                        <SideBar />
+                    </div>
+                    <SalesCard products={laptopData} />
+                </div>
             </div>
         </>
     );
