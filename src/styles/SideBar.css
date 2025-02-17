@@ -12,6 +12,10 @@
     padding: 1vh;
 }
 
+.sidebar-option.light{
+    background: linear-gradient(to top, #f3dede, #727272);
+}
+
 .sidebar-option img {
     border-radius: 50%;
     width: 5vh;
