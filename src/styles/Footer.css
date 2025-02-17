@@ -33,6 +33,8 @@
 
 .footer .footer-content .footer-section ul{
     list-style: none;
+    display: flex;
+    flex-direction: column;
 }
 
 .footer .footer-content .footer-section ul li,

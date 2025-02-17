@@ -1,163 +1,346 @@
-/* Navigation Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
 
-.nav {
+.navbar.light {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.navbar-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 3vh;
-    flex-wrap: wrap;
-    position: fixed;
-    width: 100vw;
-    z-index: 9;
-    top: 0;
 }
 
-.navigation {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 83vh;
-}
-
-.nav ul {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    list-style: none;
-    gap: 3vh;
-}
-
-.logo {
+.navbar-logo a {
+    font-size: 1.5rem;
+    font-weight: 700;
     color: white;
+    text-decoration: none;
+    letter-spacing: 2px;
 }
 
-.menu {
-    background-color: #ffffff54;
-    color: rgb(255, 255, 255);
+.navbar.light .navbar-logo a {
+    color: #000;
+}
+
+.navbar-content {
     display: flex;
-    justify-content: center;
-    border-radius: 5px;
-    padding: 2vh 3vh;
-    font-weight: 600;
-}
-
-.menu ul {
-    gap: 10vh;
-}
-
-.menu ul li{
-    &:hover{
-        cursor: pointer;
-        color: blue;
-    }
-}
-
-.nav.light .menu {
-    color: black;
-}
-
-.credidentials {
-    background-color: #ffffff54;
-    padding: 1vh;
-    border-radius: 5px;
-}
-
-.credidentials ul {
-    display: flex;
-    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-
+    gap: 2rem;
 }
 
-.credidentials ul button.theme-toggle {
-    background-color: #ffffff4f;
-    width: 5vh;
-    height: 5vh;
-    border: none;
+.navbar-menu ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    padding: 0.5rem 1rem;
     border-radius: 4px;
-
-    &:hover {
-        border: 1px solid rgb(255, 255, 255);
-    }
+    transition: all 0.3s ease;
 }
 
-.cart-icon{
-    width: 5vh;
-    height: 5vh;
+.navbar.light .navbar-menu a {
+    color: #000;
+}
+
+.navbar-menu a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.navbar.light .navbar-menu a:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.navbar-actions {
     display: flex;
-    justify-content: center;
     align-items: center;
-    border-radius: 50%;
-    background-color: #ffffff4f;
+    gap: 1rem;
+}
+
+.theme-btn, .cart-btn {
+    background: rgba(255, 255, 255, 0.1);
     border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.navbar.light .theme-btn,
+.navbar.light .cart-btn {
+    color: #000;
+}
+
+.theme-btn:hover, .cart-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.cart-btn {
+    position: relative;
+    text-decoration: none;
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ff4444;
+    color: white;
+    font-size: 0.7rem;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.login-btn, .signup-btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
     cursor: pointer;
 }
 
-.Signup-btn,
-.login-btn,
-.explore {
-    width: 12vh;
-    height: 5vh;
-    text-transform: uppercase;
-    border: none;
-    border: 1px solid transparent;
-    transition: all .3s ease;
-
-    &:hover {
-        border: 1px solid white;
-        background: transparent;
-        color: white;
-        cursor: pointer;
-    }
-}
-
-.explore{
-    width: 15vh;
-    font-weight: 600;
-}
-
-.Signup-btn {
-    background-color: #fff;
-    border-radius: 4px;
-    font-weight: 800;
-}
-
 .login-btn {
-    background-color: #000000;
-    border-radius: 4px;
+    background: transparent;
+    border: 1px solid white;
     color: white;
-    font-weight: 800;
 }
 
-@media (max-width:768px) {
-    .nav {
-        gap: 2vh;
-        justify-content: center;
+.navbar.light .login-btn {
+    border-color: #000;
+    color: #000;
+}
+
+.signup-btn {
+    background: white;
+    border: 1px solid transparent;
+    color: black;
+}
+
+.navbar.light .signup-btn {
+    background: #000;
+    color: white;
+}
+
+.login-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.signup-btn:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+}
+
+.navbar-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.navbar-hamburger span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.navbar.light .navbar-hamburger span {
+    background: #000;
+}
+
+.cart-btn {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.navbar.light .cart-btn {
+    color: #000;
+}
+
+.cart-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #ff4444;
+    color: white;
+    font-size: 0.75rem;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 6px;
+    font-weight: bold;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    animation: cartBounce 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes cartBounce {
+    0% {
+        transform: scale(0);
+    }
+    80% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.cart-count:where([data-count]:not([data-count=""])) {
+    min-width: 24px;
+}
+
+@media (max-width: 1024px) {
+    .navbar-container {
+        padding: 1rem;
+    }
+    
+    .navbar-menu ul {
+        gap: 1rem;
+    }
+    
+    .auth-buttons {
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-hamburger {
+        display: flex;
     }
 
-    .navigation {
-        width: 100vw;
-        gap: 2vh;
+    .navbar-content {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
     }
 
-    .navigation ul {
-        width: 70vw;
-        gap: 0vh;
-        font-size: .8rem;
+    .navbar.light .navbar-content {
+        background: rgba(255, 255, 255, 0.95);
     }
 
-    .menu {
-        padding: 1vh;
+    .navbar-content.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
     }
 
-    .credidentials ul button.theme-toggle {
-        height: 3vh;
+    .navbar-menu ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
     }
 
-    .credidentials ul li button {
-        height: 3vh;
-        font-size: .6rem;
+    .navbar-menu a {
+        display: block;
+        padding: 0.5rem 1rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .auth-buttons {
+        width: 100%;
+    }
+
+    .login-btn, .signup-btn {
+        width: 100%;
+        padding: 0.75rem;
+    }
+    .cart-btn {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .cart-count {
+        min-width: 18px;
+        height: 18px;
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-container {
+        padding: 0.75rem;
+    }
+
+    .navbar-logo a {
+        font-size: 1.2rem;
+    }
+
+    .theme-btn, .cart-btn {
+        width: 35px;
+        height: 35px;
     }
 }

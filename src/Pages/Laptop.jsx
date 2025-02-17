@@ -5,6 +5,7 @@ import Navbar from '../Components/Navbar';
 import Sortbtn from '../Components/Sortbtn';
 import { ThemeContext } from "../App";
 import SideBar from "../Components/SideBar";
+import Footer from "../Components/Footer";
 
 export default function Laptop({ themebtn, toggle }) {
     const { theme } = useContext(ThemeContext);
@@ -73,7 +74,7 @@ export default function Laptop({ themebtn, toggle }) {
 
     return (
         <>
-            <div className={`datas ${theme}`}>
+            <div className={`datas ${theme}`} id="laptop">
                 <Navbar themebtn={themebtn} toggle={toggle} />
 
                 <div className="top-det">
@@ -86,6 +87,7 @@ export default function Laptop({ themebtn, toggle }) {
                     </div>
                     <SalesCard products={laptopData} />
                 </div>
+                <Footer/>
             </div>
         </>
     );

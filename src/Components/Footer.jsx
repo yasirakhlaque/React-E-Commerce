@@ -1,10 +1,10 @@
 import '../styles/Footer.css'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link';
 import { useContext } from 'react';
 import { ThemeContext } from '../App';
 
-const Footer = () => {
+const Footer = ({ bg }) => {
     const { theme } = useContext(ThemeContext);
     return (
         <footer className={`footer ${theme}`}>
@@ -13,8 +13,10 @@ const Footer = () => {
                 <div className="footer-section">
                     <h3>Visit</h3>
                     <ul>
-                    <HashLink smooth to="/#home">Home</HashLink>
-                        <li><a href="#">Laptops</a></li>
+                        <HashLink smooth to="/#home">Home</HashLink>
+                        <Link to="/Laptop">
+                            <li>Laptops</li>
+                        </Link>
                         <HashLink smooth to="/#top-section">Top Listed</HashLink>
                         <Link to="/cart">
                             <li>Cart</li>
