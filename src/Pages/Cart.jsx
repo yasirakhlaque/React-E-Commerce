@@ -4,6 +4,7 @@ import Navbar from "../Components/Navbar";
 import "../styles/Cart.css";
 import { ThemeContext } from "../App";
 import { CartContext } from "../Context/CartContext"; // ✅ Import Context
+import Footer from "../Components/Footer";
 
 export default function Cart({ themebtn, toggle }) {
     const { theme } = useContext(ThemeContext);
@@ -45,6 +46,7 @@ export default function Cart({ themebtn, toggle }) {
                     <button className="buy">Buy All</button>
                 </div>
             </div>
+            <Footer />
         </>
     );
 }
