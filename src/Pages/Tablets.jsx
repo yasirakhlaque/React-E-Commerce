@@ -5,6 +5,7 @@ import Navbar from '../Components/Navbar';
 import Sortbtn from '../Components/Sortbtn';
 import { ThemeContext } from "../App";
 import SideBar from "../Components/SideBar";
+import Footer from "../Components/Footer";
 
 export default function Tablets({ themebtn, toggle }) {
     const { theme } = useContext(ThemeContext);
@@ -73,6 +74,7 @@ export default function Tablets({ themebtn, toggle }) {
                     </div>
                     <SalesCard products={tabletData} />
                 </div>
+                <Footer/>
             </div>
         </>
     )

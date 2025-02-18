@@ -5,6 +5,7 @@ import Navbar from '../Components/Navbar';
 import Sortbtn from '../Components/Sortbtn';
 import { ThemeContext } from "../App";
 import SideBar from "../Components/SideBar";
+import Footer from "../Components/Footer";
 
 export default function Chargers({ themebtn, toggle }) {
     const { theme } = useContext(ThemeContext);
@@ -74,6 +75,7 @@ export default function Chargers({ themebtn, toggle }) {
                     </div>
                     <SalesCard products={chargerData} />
                 </div>
+                <Footer/>
             </div>
         </>
     )

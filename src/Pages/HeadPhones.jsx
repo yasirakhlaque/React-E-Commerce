@@ -5,6 +5,7 @@ import Navbar from '../Components/Navbar';
 import Sortbtn from '../Components/Sortbtn';
 import { ThemeContext } from "../App";
 import SideBar from "../Components/SideBar";
+import Footer from "../Components/Footer";
 
 export default function HeadPhones({ themebtn, toggle }) {
     const { theme } = useContext(ThemeContext);
@@ -85,6 +86,7 @@ export default function HeadPhones({ themebtn, toggle }) {
                     </div>
                     <SalesCard products={headphoneData} />
                 </div>
+                <Footer/>
             </div>
         </>
     )
