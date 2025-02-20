@@ -38,7 +38,8 @@
 }
 
 .footer .footer-content .footer-section ul li,
-.footer .footer-content .footer-section ul a
+.footer .footer-content .footer-section ul a,
+.legal-links a
 {
     margin: 1vh;
     &:hover{
