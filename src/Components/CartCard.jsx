@@ -17,7 +17,15 @@ export default function CartCard({ itemImage, itemName, itemAbt, itemPrice, prod
                     <h1>{itemPrice}</h1>
                 </div>
                 <div className="cart-options">
-                    <button className="delete" onClick={() => removeFromCart(product)}><i className="fa-solid fa-trash"></i></button>
+                    <button className="delete" onClick={() => removeFromCart(product)}>
+                        <lord-icon
+                            src="https://cdn.lordicon.com/hwjcdycb.json"
+                            trigger="hover"
+                            stroke="bold"
+                            state="morph-trash-in"
+                            colors="primary:#121331,secondary:#000000">
+                        </lord-icon>
+                        </button>
                 </div>
             </div>
         </>
