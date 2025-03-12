@@ -1,0 +1,12 @@
+.Success-Add{
+    animation: onload .5s ;
+}
+
+@keyframes onload {
+    from{
+        transform: translateY(50px);
+    }
+    to{
+        transform: translateY(0px);
+    }
+}
