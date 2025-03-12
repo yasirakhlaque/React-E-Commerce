@@ -21,14 +21,14 @@
     align-items: center;
     flex-direction: column;
     text-align: left;
-    transition: all 0.5s ease-in-out;
+    transition: all .3s ease-in-out;
     color: white;
     cursor: pointer;
 }
 
 /* Modified hover effect to only trigger when hovering cards */
 .sales-card:hover {
-    transform: scale(1.1) rotate(-5deg);
+    transform:  translateY(-10px);
     box-shadow: 8px 8px 12px rgb(32, 32, 48);
 }
 
