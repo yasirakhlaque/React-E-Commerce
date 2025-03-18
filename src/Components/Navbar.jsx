@@ -18,7 +18,7 @@ export default function Navbar({ themebtn, toggle }) {
         <div className={`navbar ${theme}`}>
             <div className="navbar-container">
                 <div className="navbar-logo">
-                    <Link to={'/'}>LOGO</Link>
+                    <Link to={'/'}>Techora</Link>
                 </div>
 
                 <div className="navbar-hamburger" onClick={toggleMenu}>
