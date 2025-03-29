@@ -9,6 +9,7 @@ export default function CartProvider({ children }) {
     const [totalPrice, setTotalPrice] = useState(0);
     const [showSuccess, setShowSuccess] = useState(false);
     const [showRemove, setShowRemove] = useState(false);
+    const [currentProduct, setCurrentProduct] = useState(null);
 
     // Add to cart function
     const AddToCart = (product) => {
@@ -28,6 +29,8 @@ export default function CartProvider({ children }) {
         setTotalItems(prevTotal => prevTotal + 1);
         setTotalPrice(prevPrice => prevPrice + parseInt(product.itemPrice.replace("Rs.", "")));
 
+        // Set current product for notification
+        setCurrentProduct(product);
         setShowSuccess(true);
         setTimeout(() => setShowSuccess(false), 3000);
     };
@@ -47,6 +50,8 @@ export default function CartProvider({ children }) {
         setTotalItems(prevTotal => prevTotal - 1);
         setTotalPrice(prevPrice => prevPrice - parseInt(product.itemPrice.replace("Rs.", "")));
 
+        // Set current product for notification
+        setCurrentProduct(product);
         setShowRemove(true);
         setTimeout(() => setShowRemove(false), 3000);
     };
@@ -75,8 +80,8 @@ export default function CartProvider({ children }) {
             sortByPriceLow
         }}>
             {children}
-            {showSuccess && <SuccessAdd state={"Add to"} />}
-            {showRemove && <SuccessAdd state={"Removed From"} />}
+            {showSuccess && <SuccessAdd state={"Add to"} productName={currentProduct?.itemName} />}
+            {showRemove && <SuccessAdd state={"Removed From"} productName={currentProduct?.itemName} />}
         </CartContext.Provider>
     );
 }
