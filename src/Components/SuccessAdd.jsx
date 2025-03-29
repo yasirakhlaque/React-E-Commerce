@@ -1,9 +1,33 @@
 import '../styles/SuccessAdd.css'
+import { useContext } from 'react';
+import { ThemeContext } from '../App';
 
-export default function SuccessAdd({state}) {
+export default function SuccessAdd({ state, productName }) {
+    const { theme } = useContext(ThemeContext);
+    
+    const getIcon = () => {
+        return state === "Add to" 
+            ? <i className="fa-solid fa-circle-check"></i> 
+            : <i className="fa-solid fa-circle-minus"></i>;
+    };
+    
+    const getStateText = () => {
+        return state === "Add to" 
+            ? "Added to Cart" 
+            : "Removed from Cart";
+    };
+    
     return (
-        <div style={{ position: "fixed", bottom: "10px", right: "10px", background: "#2424428a", color: "white", padding: "10px", borderRadius: "5px",border:"1px solid grey" }} className='Success-Add'>
-         <i className="fa-solid fa-circle-question"></i>   Item {state} Cart!
+        <div className={`success-toast ${theme} ${state === "Add to" ? "add" : "remove"}`}>
+            <div className="toast-content">
+                <div className="toast-icon">
+                    {getIcon()}
+                </div>
+                <div className="toast-text">
+                    <p>{getStateText()}</p>
+                    {productName && <h4>{productName}</h4>}
+                </div>
+            </div>
         </div>
     );
 }

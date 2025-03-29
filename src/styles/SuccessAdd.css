@@ -10,3 +10,120 @@
         transform: translateY(0px);
     }
 }
+
+.success-toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 15px 25px;
+    background: linear-gradient(135deg, #242744 0%, #0a0c1e 100%);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    color: white;
+    z-index: 9999;
+    animation: slideInRight 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55), 
+               slideOutRight 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 2.5s forwards;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    min-width: 250px;
+}
+
+.success-toast.light {
+    background: linear-gradient(135deg, #fcfcfc 0%, #a1a1ad 100%);
+    color: #111;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.success-toast.add .toast-icon i {
+    color: #22c55e;
+}
+
+.success-toast.remove .toast-icon i {
+    color: #ef4444;
+}
+
+.toast-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.toast-icon {
+    font-size: 1.8rem;
+}
+
+.toast-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.toast-text p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.toast-text h4 {
+    margin: 5px 0 0 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .success-toast {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 20px;
+        min-width: 200px;
+    }
+    
+    .toast-icon {
+        font-size: 1.5rem;
+    }
+    
+    .toast-text h4 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .success-toast {
+        bottom: 15px;
+        right: 15px;
+        padding: 10px 15px;
+        min-width: 180px;
+    }
+    
+    .toast-icon {
+        font-size: 1.3rem;
+    }
+    
+    .toast-text p {
+        font-size: 0.8rem;
+    }
+    
+    .toast-text h4 {
+        font-size: 0.9rem;
+    }
+}
