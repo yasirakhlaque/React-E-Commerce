@@ -12,7 +12,7 @@ export default function Hero({ themebtn, toggle }) {
                 <Navbar themebtn={themebtn} toggle={toggle} />
                 <div className="dialogue">
                     <div className="dialog-img1">
-                        <img src="Images/headphone2.png" alt="Images" />
+                        <img src="Images/headphone2.png" alt="Headphone" />
                     </div>
                     <div className="dialogue-content">
                         <h1>Tech That Fits Your Life, Prices That Fit Your Budget!</h1>
@@ -20,7 +20,7 @@ export default function Hero({ themebtn, toggle }) {
                         <button className='explore'>Explore</button>
                     </div>
                     <div className="dialog-img2">
-                        <img src="Images/headphone2.png" alt="Images" />
+                        <img src="Images/headphone2.png" alt="Premium Headphone" />
                     </div>
                 </div>
             </div>
