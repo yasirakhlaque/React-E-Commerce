@@ -4,21 +4,21 @@ import "../styles/OpeningAnimation.css";
 const OpeningAnimation = ({ onComplete }) => {
   const [showText, setShowText] = useState(false);
   const [letters, setLetters] = useState([]);
-  const welcomeText = "WELCOME";
+  const welcomeText = "TECHORA";
 
   useEffect(() => {
-    setTimeout(() => setShowText(true), 1000);
+    setTimeout(() => setShowText(true), 1500);
     setTimeout(() => {
       const letterArray = welcomeText.split("").map((char, index) => ({
         char,
-        delay: index * 200,
+        delay: index * 150
       }));
       setLetters(letterArray);
-    }, 1200);
+    }, 1800);
 
     setTimeout(() => {
       if (onComplete) onComplete();
-    }, 4000);
+    }, 4500);
   }, [onComplete]);
 
   return (
