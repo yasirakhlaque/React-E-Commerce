@@ -4,13 +4,17 @@
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .navbar.light {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .navbar-container {
@@ -23,15 +27,35 @@
 }
 
 .navbar-logo a {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
     color: white;
     text-decoration: none;
     letter-spacing: 2px;
+    position: relative;
+    background: linear-gradient(to right, #afafaf, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
 }
 
 .navbar.light .navbar-logo a {
-    color: #000;
+    background: linear-gradient(to right, #000000, #333333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navbar-logo a:hover {
+    background: linear-gradient(to right, #ffffff, #7d7d7d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(1.05);
+}
+
+.navbar.light .navbar-logo a:hover {
+    background: linear-gradient(to right, #333333, #000000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .navbar-content {
@@ -52,23 +76,40 @@
     color: white;
     text-decoration: none;
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     letter-spacing: 1px;
     padding: 0.5rem 1rem;
     border-radius: 4px;
     transition: all 0.3s ease;
+    position: relative;
 }
 
 .navbar.light .navbar-menu a {
     color: #000;
 }
 
-.navbar-menu a:hover {
-    background: rgba(255, 255, 255, 0.1);
+.navbar-menu a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background: white;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
 }
 
-.navbar.light .navbar-menu a:hover {
-    background: rgba(0, 0, 0, 0.1);
+.navbar.light .navbar-menu a:after {
+    background: #000;
+}
+
+.navbar-menu a:hover:after {
+    width: 70%;
+}
+
+.navbar-menu a:hover {
+    transform: translateY(-2px);
 }
 
 .navbar-actions {
@@ -93,129 +134,49 @@
 
 .navbar.light .theme-btn,
 .navbar.light .cart-btn {
+    background: rgba(0, 0, 0, 0.1);
     color: #000;
 }
 
 .theme-btn:hover, .cart-btn:hover {
     background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.cart-btn {
-    position: relative;
-    text-decoration: none;
+.navbar.light .theme-btn:hover, 
+.navbar.light .cart-btn:hover {
+    background: rgba(0, 0, 0, 0.2);
 }
 
-.cart-count {
+.theme-btn:before, .cart-btn:before {
+    content: '';
     position: absolute;
-    top: -5px;
-    right: -5px;
-    background: #ff4444;
-    color: white;
-    font-size: 0.7rem;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.auth-buttons {
-    display: flex;
-    gap: 1rem;
-}
-
-.login-btn, .signup-btn {
-    padding: 0.5rem 1.5rem;
-    border-radius: 4px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.login-btn {
-    background: black;
-    border: 1px solid transparent;
-    color: rgb(255, 255, 255);
-}
-
-.navbar.light .login-btn {
-    color: #ffffff;
-}
-
-.signup-btn {
-    background: white;
-    border: 1px solid transparent;
-    color: black;
-}
-
-.navbar.light .signup-btn {
-    background: #000;
-    color: white;
-}
-
-.login-btn:hover {
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
     background: rgba(255, 255, 255, 0.1);
-    transform: translateY(-2px);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s;
 }
 
-.signup-btn:hover {
-    background: rgba(255, 255, 255, 0.9);
-    transform: translateY(-2px);
-}
-
-.navbar-hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 6px;
-    cursor: pointer;
-    padding: 0.5rem;
-}
-
-.navbar-hamburger span {
-    display: block;
-    width: 25px;
-    height: 2px;
-    background: white;
-    transition: all 0.3s ease;
-}
-
-.navbar.light .navbar-hamburger span {
-    background: #000;
+.theme-btn:hover:before, .cart-btn:hover:before {
+    width: 150%;
+    height: 150%;
 }
 
 .cart-btn {
     position: relative;
-    background: rgba(255, 255, 255, 0.1);
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
     text-decoration: none;
-}
-
-.navbar.light .cart-btn {
-    color: #000;
-}
-
-.cart-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
 }
 
 .cart-count {
     position: absolute;
     top: -8px;
     right: -8px;
-    background: #ff4444;
+    background: linear-gradient(45deg, #ff4444, #ff2222);
     color: white;
     font-size: 0.75rem;
     min-width: 20px;
@@ -226,8 +187,9 @@
     justify-content: center;
     padding: 0 6px;
     font-weight: bold;
-    border: 2px solid rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(0, 0, 0, 0.1);
     animation: cartBounce 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes cartBounce {
@@ -244,6 +206,71 @@
 
 .cart-count:where([data-count]:not([data-count=""])) {
     min-width: 24px;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.login-btn, .signup-btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.5px;
+}
+
+.login-btn {
+    background: linear-gradient(45deg, #121212, #333333);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgb(255, 255, 255);
+}
+
+.navbar.light .login-btn {
+    background: linear-gradient(45deg, #333333, #555555);
+    color: #ffffff;
+}
+
+.signup-btn {
+    background: linear-gradient(45deg, #f2f2f2, #ffffff);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: black;
+}
+
+.navbar.light .signup-btn {
+    background: linear-gradient(45deg, #000000, #333333);
+    color: white;
+}
+
+.login-btn:hover, .signup-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+}
+
+.navbar-hamburger span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: white;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.navbar.light .navbar-hamburger span {
+    background: #000;
 }
 
 @media (max-width: 1024px) {
@@ -266,76 +293,74 @@
     }
 
     .navbar-content {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.95);
-        padding: 1rem;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: linear-gradient(to bottom, rgba(20, 19, 22, 0.98), rgba(17, 12, 85, 0.98));
         flex-direction: column;
-        gap: 1rem;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: all 0.3s ease;
+        justify-content: center;
+        gap: 2rem;
+        transition: all 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+        padding: 2rem;
+        z-index: 1000;
+        backdrop-filter: blur(10px);
     }
 
     .navbar.light .navbar-content {
-        background: rgba(255, 255, 255, 0.95);
+        background: linear-gradient(to bottom, rgba(240, 232, 232, 0.98), rgba(167, 167, 167, 0.98));
     }
 
     .navbar-content.active {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
+        right: 0;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
     }
 
     .navbar-menu ul {
         flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+        text-align: center;
+        gap: 1.5rem;
     }
 
     .navbar-menu a {
-        display: block;
-        padding: 0.5rem 1rem;
-        width: 100%;
-        text-align: center;
+        font-size: 1.1rem;
+        padding: 0.7rem 1.5rem;
     }
 
     .navbar-actions {
         flex-direction: column;
         width: 100%;
-        gap: 1rem;
+        gap: 1.5rem;
     }
 
     .auth-buttons {
         width: 100%;
+        flex-direction: column;
+        gap: 1rem;
     }
 
     .login-btn, .signup-btn {
         width: 100%;
-        padding: 0.75rem;
+        text-align: center;
+        padding: 0.8rem;
     }
+
     .cart-btn {
-        width: 35px;
-        height: 35px;
-    }
-    
-    .cart-count {
-        min-width: 18px;
-        height: 18px;
-        font-size: 0.7rem;
+        width: 100%;
+        border-radius: 30px;
+        height: 45px;
+        justify-content: center;
     }
 }
 
 @media (max-width: 480px) {
     .navbar-container {
-        padding: 0.75rem;
+        padding: 0.8rem;
     }
 
     .navbar-logo a {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
 
     .theme-btn, .cart-btn {
