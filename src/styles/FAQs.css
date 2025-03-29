@@ -1,0 +1,31 @@
+.faqs{
+    background: linear-gradient(135deg, #141316, #110c55);
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: auto;
+    padding-top: 16vh;
+}
+
+.faqs.light{
+    background: linear-gradient(135deg, #f0e8e8, #a7a7a7);
+    color: black;
+}
+
+.faqs h2{
+    text-align: center;
+}
+
+.faqs details{
+    width: 60vw;
+    margin: 3vh;
+    border-bottom: 1px solid grey;
+    padding: 12px;
+}
+
+.faqs details p{
+    margin: 2vh 0;
+}

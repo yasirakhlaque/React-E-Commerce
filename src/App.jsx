@@ -10,6 +10,7 @@ import Phones from './Pages/Phones';
 import HeadPhones from './Pages/HeadPhones';
 import Tablets from './Pages/Tablets';
 import Chargers from './Pages/Chargers';
+import FAQ from './Pages/FAQs';
 
 
 export const ThemeContext = createContext();
@@ -35,6 +36,7 @@ function App() {
               <Route path="/HeadPhones" element={<HeadPhones themebtn={theme} toggle={toggleTheme} />} />
               <Route path="/Tablets" element={<Tablets themebtn={theme} toggle={toggleTheme} />} />
               <Route path="/Chargers" element={<Chargers themebtn={theme} toggle={toggleTheme} />} />
+              <Route path="/FAQ" element={<FAQ themebtn={theme} toggle={toggleTheme} />} />
             </Routes>
           </div>
         </Router>

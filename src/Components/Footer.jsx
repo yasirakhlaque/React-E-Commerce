@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link';
 import { useContext } from 'react';
 import { ThemeContext } from '../App';
+import FAQ from '../Pages/FAQs';
 
 const Footer = ({ bg }) => {
     const { theme } = useContext(ThemeContext);
@@ -31,7 +32,7 @@ const Footer = ({ bg }) => {
                         <li><a href="#">Contact Us</a></li>
                         <li><a href="#">Shipping Policy</a></li>
                         <li><a href="#">Returns & Exchanges</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <Link to={'/FAQ'}>FAQ</Link>
                     </ul>
                 </div>
 
